@@ -11,7 +11,7 @@ uint64 BaseAddress = (uint64)GetModuleHandleA(0);
 class FNamePool* NamePoolData = nullptr;
 #define DecryptWideOffset 0x32D05D0
 #define DecryptNonWideOffset 0x32D0560
-#define NamePoolDataOffset 0x9095380
+#define NamePoolDataOffset 0xcfd1d00
 
 namespace VALORANT
 {

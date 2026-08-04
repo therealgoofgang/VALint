@@ -231,7 +231,7 @@ constexpr uint64_t camerafov = 0x11d0;
 constexpr uint64_t camerarot = 0x11ec;
 
 namespace Offsets {
-	constexpr uint64_t State = 0x9FA80D0; // o_gworld
+	constexpr uint64_t State = 0xce0cc40; // o_gworld - GWorld
 	constexpr uint64_t PlayerState = 0x480;
 	constexpr uint64_t PlatformPlayer = 0x688;
 	constexpr uint64_t RiotName = 0x3d8;
@@ -240,23 +240,23 @@ namespace Offsets {
 	constexpr uint64_t WireFrame2 = 0xC0;
 	constexpr uint64_t WireFrame3 = 0xff;
 	constexpr uint64_t Inventory = 0xC08;
-	constexpr uint64_t fmemory_malloc = 0x48151F0; // o_fmemory_malloc
+	constexpr uint64_t fmemory_malloc = 0x1a8c8e0; // o_fmemory_malloc - FMemoryMalloc
 	constexpr uint64_t Equippable = 0x248;
 
-	std::uintptr_t process_event = 0x4B898D0; // o_process_event
-	std::uintptr_t static_find_object = 0x4B9E050; // o_find_object
-	std::uintptr_t static_load_object = 0x4B9EE90; // o_load_object
+	std::uintptr_t process_event = 0x1e7f700; // o_process_event - ProcessEvent
+	std::uintptr_t static_find_object = 0x1ea5f30; // o_find_object - StaticFindObject
+	std::uintptr_t static_load_object = 0x1ea9690; // o_load_object - StaticLoadObject
 	std::uint64_t MagicOffsets = 0x46C4660; // inchanger
-	std::uintptr_t play_finisher_effect = 0x33E60B0; // o_play_finisher_effect
-	std::uintptr_t set_ares_outline = 0x6608820; // o_set_ares_outline_mode
-	std::uintptr_t bone_matrix = 0x6660D60; // o_bone_matrix
+	std::uintptr_t play_finisher_effect = 0x6995be0; // o_play_finisher_effect - PlayFinisher
+	std::uintptr_t set_ares_outline = 0x42d4860; // o_set_ares_outline_mode - SetOutlineMode
+	std::uintptr_t bone_matrix = 0x433dc40; // o_bone_matrix - BoneMatrix
 	constexpr uint64_t Mesh3pGun = 0xDE8;
 
-	std::uintptr_t get_spread_values = 0x3498C30; // o_get_spread_values
-	std::uintptr_t get_spread_angles = 0x3F73A50; // o_get_spread_angles
-	std::uintptr_t get_firing_location_direction = 0x3BF2000; // o_get_firing_location
-	std::uintptr_t tovector_and_normalize = 0x48962B0; // o_to_vector_and_normalize
-	std::uintptr_t toangle_and_normalize = 0x4892860; // o_to_angle_and_normalize
+	std::uintptr_t get_spread_values = 0x6a33db0; // o_get_spread_values - get_spread_values
+	std::uintptr_t get_spread_angles = 0x766d110; // o_get_spread_angles - get_spread_angles
+	std::uintptr_t get_firing_location_direction = 0x71c84c0; // o_get_firing_location - GetFiringLocationAndDirection
+	std::uintptr_t tovector_and_normalize = 0x1b85190; // o_to_vector_and_normalize - tovector_and_normalize
+	std::uintptr_t toangle_and_normalize = 0x1b7fc80; // o_to_angle_and_normalize - toangle_and_normalize
 
 	std::uintptr_t firing_state_component = 0x1070;
 	std::uintptr_t seed_data = 0x4B0;
