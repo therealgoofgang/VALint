@@ -3,13 +3,19 @@
 #include <vector>
 #include <map>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-extern "C"  void spoofcall_stub();
+extern void spoofcall_stub();
+extern uintptr_t proxy_call_returns[];
+extern size_t proxy_call_returns_size;
+extern size_t proxy_call_fakestack_size;
+extern uintptr_t* proxy_call_fakestack;
 
-extern "C" uintptr_t proxy_call_returns[];
-size_t proxy_call_returns_size;
-extern "C" size_t proxy_call_fakestack_size;
-extern "C" uintptr_t* proxy_call_fakestack;
+#ifdef __cplusplus
+}  // end extern "C"
+#endif
 
 
 inline unsigned  custom_rand(int start, int end)

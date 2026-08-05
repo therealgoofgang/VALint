@@ -1,10 +1,5 @@
 #pragma once
 
-// Close any extern "C" block that might be open from assembly or other sources
-#ifdef __cplusplus
-}
-#endif
-
 #include "windows.h"
 #include <stdint.h>
 #include <iostream>
