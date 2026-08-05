@@ -1,4 +1,4 @@
-﻿	#include "./cheat.h";
+﻿#include "./cheat.h"
 #include "xorstring.h"
 #include <Windows.h>
 #include <winternl.h>
