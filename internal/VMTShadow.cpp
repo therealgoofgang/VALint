@@ -1,8 +1,3 @@
-#ifdef __cplusplus
-}  // Close any accidentally open extern "C" block
-extern "C++" {
-#endif
-
 #include "VMTShadow.h"
 #include <Windows.h>
 
@@ -60,8 +55,3 @@ void VMTShadowing::Remove(int index)
 	// Removes the hook function from hook list
 	this->m_object_hooks.erase(index);
 }
-
-
-#ifdef __cplusplus
-}  // Close extern "C++" block
-#endif

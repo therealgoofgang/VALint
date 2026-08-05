@@ -79,7 +79,7 @@ public:
 	OPTION(bool, menu_opened, true);
 	OPTION(bool, healthbar, false);
 	OPTION(bool, shieldbar, false);
-	OPTION(bool, ýtsgamerdoc, false);
+	OPTION(bool, itsgamerdoc, false);
 	OPTION(bool, HealthText, false);
 	OPTION(bool, box3d, false);
 	OPTION(bool, box2d, false);

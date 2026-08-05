@@ -1,9 +1,4 @@
-﻿#ifdef __cplusplus
-}  // Close any accidentally open extern "C" block
-extern "C++" {
-#endif
-
-#include "./cheat.h"
+﻿#include "./cheat.h"
 #include "xorstring.h"
 #include <Windows.h>
 #include <winternl.h>
@@ -183,6 +178,3 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
 
 
-#ifdef __cplusplus
-}  // Close extern "C++" block
-#endif
