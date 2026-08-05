@@ -1,7 +1,5 @@
 #pragma once
 #include <Windows.h>
-#include <vector>
-#include <map>
 
 #ifdef __cplusplus
 extern "C" {
@@ -17,6 +15,8 @@ extern uintptr_t* proxy_call_fakestack;
 }  // end extern "C"
 #endif
 
+#include <vector>
+#include <map>
 
 inline unsigned  custom_rand(int start, int end)
 {
