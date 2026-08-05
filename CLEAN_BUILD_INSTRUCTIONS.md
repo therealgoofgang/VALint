@@ -1,28 +1,37 @@
-# Clean Build Instructions
+# Clean Build Instructions for VALint
 
-The C linkage errors have been fixed in the code. You need to perform a **clean rebuild** to clear cached object files.
+## The C Linkage Error Fix is Complete
 
-## In Visual Studio:
+The `internal/Hookign/ret_spoofing.h` file has been fixed with proper `extern "C"` guards.
 
-1. Open the solution in Visual Studio
-2. Go to **Build** menu → **Clean Solution**
-3. Wait for it to finish
-4. Go to **Build** menu → **Rebuild Solution** 
+## Steps to Get a Fresh Working Copy
 
-## Manual Cleanup (Alternative):
+### 1. Backup Your Local Changes (if any)
+If you have any uncommitted changes you want to keep, back them up first.
 
-If the above doesn't work, manually delete these directories:
-- `C:\Users\Jacob\Desktop\VALint\internal\x64\Debug\`
-- `C:\Users\Jacob\Desktop\VALint\internal\x64\Release\`
-- `C:\Users\Jacob\Desktop\VALint\x64\`
+### 2. Delete Your Local Repository
+Delete the entire `C:\Users\Jacob\Desktop\VALint\` folder.
 
-Then rebuild in Visual Studio.
+### 3. Download Fresh from GitHub
+Go to: https://github.com/therealgoofgang/VALint/tree/offset-update-aug-2026
 
-## What Was Fixed:
+Click the **Code** button → **Download ZIP**
 
-The `internal/Hookign/ret_spoofing.h` file had `extern "C"` declarations that weren't properly wrapped in a block with guards. This caused C linkage to "leak" into C++ code, making the compiler try to compile STL templates with C linkage (which is illegal).
+Extract to `C:\Users\Jacob\Desktop\`
 
-The fix wraps the extern "C" declarations like this:
+### 4. Open Project in Visual Studio
+1. Open Visual Studio 2022
+2. File → Open → Project/Solution
+3. Navigate to `C:\Users\Jacob\Desktop\VALint\internal\internal.sln`
+4. Click Open
+
+### 5. Build
+1. Make sure build configuration is: **Debug | x64**
+2. Build → Rebuild Solution
+
+## What Was Fixed
+
+The file `internal/Hookign/ret_spoofing.h` now has proper `#ifdef __cplusplus` guards around the `extern "C"` block:
 
 ```cpp
 #ifdef __cplusplus
@@ -40,11 +49,16 @@ extern uintptr_t* proxy_call_fakestack;
 #endif
 ```
 
-This ensures the C linkage block is properly closed before any C++ code (including the `initialize_spoofcall` function).
+This ensures that C++ STL headers (like `<algorithm>`, `<vector>`, etc.) are not compiled with C linkage, which was causing the 306+ template errors.
 
-## If Issues Persist:
+## If You Still Get Errors
 
-If you still get C linkage errors after a clean rebuild, please share:
-1. The full first error message
-2. Screenshot of the Build Output window
-3. Confirm you did a Clean + Rebuild (not just Build)
+If after a fresh download you still get errors, the issue might be with:
+1. Visual Studio itself needing a restart
+2. Windows Defender or antivirus interfering
+3. Missing Windows SDK or Visual Studio components
+
+In that case, try:
+- Close Visual Studio completely
+- Restart your computer
+- Reopen Visual Studio and try again
