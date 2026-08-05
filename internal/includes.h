@@ -1,7 +1,8 @@
 #pragma once
 
+// Close any extern "C" block that might be open from assembly or other sources
 #ifdef __cplusplus
-extern "C++" {
+}
 #endif
 
 #include "windows.h"
@@ -563,8 +564,3 @@ void Rehook(UWorld* Uworld, APlayerController* PlayerController) {
 	}
 
 }
-
-
-#ifdef __cplusplus
-} // extern "C++"
-#endif
