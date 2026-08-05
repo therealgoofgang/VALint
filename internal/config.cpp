@@ -1,8 +1,3 @@
-#ifdef __cplusplus
-}  // Close any accidentally open extern "C" block
-extern "C++" {
-#endif
-
 #include "config.hpp"
 #include "options.hpp"
 #include <ShlObj.h>
@@ -11,7 +6,6 @@ extern "C++" {
 #include <iostream>
 #include "base64.hpp"
 #include <fstream>
-
 
 using namespace std;
 
@@ -118,7 +112,3 @@ void CConfig::Initialize() {
 
 
 CConfig* Config = new CConfig();
-
-#ifdef __cplusplus
-}  // Close extern "C++" block
-#endif

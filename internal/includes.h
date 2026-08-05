@@ -1,3 +1,9 @@
+#pragma once
+
+#ifdef __cplusplus
+extern "C++" {
+#endif
+
 #include "windows.h"
 #include <stdint.h>
 #include <iostream>
@@ -557,3 +563,8 @@ void Rehook(UWorld* Uworld, APlayerController* PlayerController) {
 	}
 
 }
+
+
+#ifdef __cplusplus
+} // extern "C++"
+#endif
