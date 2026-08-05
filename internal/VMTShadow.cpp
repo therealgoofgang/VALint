@@ -1,3 +1,8 @@
+#ifdef __cplusplus
+}  // Close any accidentally open extern "C" block
+extern "C++" {
+#endif
+
 #include "VMTShadow.h"
 #include <Windows.h>
 
@@ -28,7 +33,7 @@ size_t VMTShadowing::get_function_count()
 	int methods = 0;
 	do {
 		++methods;
-	} while (*(uintptr_t*)((uintptr_t)this->m_ptr_object_vtable + (methods * 0x8))); //vtable da ki methodlar?null olana kadar looplad?ve method sayýsýn?buldu
+	} while (*(uintptr_t*)((uintptr_t)this->m_ptr_object_vtable + (methods * 0x8))); //vtable da ki methodlar?null olana kadar looplad?ve method sayï¿½sï¿½n?buldu
 
 	return methods;
 }
@@ -55,3 +60,8 @@ void VMTShadowing::Remove(int index)
 	// Removes the hook function from hook list
 	this->m_object_hooks.erase(index);
 }
+
+
+#ifdef __cplusplus
+}  // Close extern "C++" block
+#endif
