@@ -1,6 +1,10 @@
 #pragma once
+
+// Protect STL includes from C linkage
+#ifdef __cplusplus
 #include <map>
 #include <utility>
+#endif
 
 class VMTShadowing
 {

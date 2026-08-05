@@ -1,11 +1,14 @@
 #pragma once
 
+// Protect all C++ STL includes from C linkage
+#ifdef __cplusplus
 #include <string>
 #include <memory>
 #include <unordered_map>
 #include <vector>
 #include <map>
 #include <array>
+#endif
 
 #define A( s ) #s
 #define OPTION(type, var, val) type var = val

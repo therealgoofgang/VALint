@@ -1,5 +1,7 @@
 #pragma once
 
+// Protect all C++ STL includes from C linkage
+#ifdef __cplusplus
 #include <Windows.h>
 #include <string>
 #include <memory>
@@ -7,6 +9,7 @@
 #include <unordered_map>
 #include <vector>
 #include <set>
+#endif
 
 
 class CConfig

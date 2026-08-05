@@ -1,11 +1,16 @@
 #include "config.hpp"
 #include "options.hpp"
+
+// Protect STL includes from C linkage
+#ifdef __cplusplus
 #include <ShlObj.h>
 #include <filesystem>
 #include <Windows.h>
 #include <iostream>
-#include "base64.hpp"
 #include <fstream>
+#endif
+
+#include "base64.hpp"
 
 using namespace std;
 
