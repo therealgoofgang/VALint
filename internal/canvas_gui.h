@@ -1,12 +1,17 @@
 ﻿	#pragma once
+
+// Ensure we're in C++ mode for all STL includes
+#ifdef __cplusplus
+#include <algorithm>
+#include <ctime> // needed for std::time, std::localtime
+#endif
+
 	#include "memory.h"
 	#include "unrealengine.h"
 	#include "Decryptor.h"
 	#include "options.hpp"
 	#include "Hookign/ret_spoofing.h"
 	#include "Hookign/spoofer.h"
-#include <algorithm>
-#include <ctime> // needed for std::time, std::localtime
 int index = 453;
 int elements_count = 0;
 FLinearColor HSVtoRGB2(float h, float s, float v)
